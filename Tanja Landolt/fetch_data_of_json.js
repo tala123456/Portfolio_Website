@@ -1,17 +1,16 @@
-// Get the 'Year' property of the 'Cloud' project
-var year = data.projects[0].year;
+// data.js
 
-// Get the h6 element with the id 'year'
-var yearElement = document.querySelector("#year");
+// Function to fetch JSON data
+async function fetchData() {
+  try {
+    const response = await fetch("data.json");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
+}
 
-// Set the text of the yearElement to the year
-yearElement.textContent = year;
-
-// Get the 'Collaborator' property of the 'Cloud' project
-var collaborator = cloudProject.Collaborator;
-
-// Get the h6 element with the id 'collaborator'
-var collaboratorElement = document.querySelector("#collaborator");
-
-// Set the text of the collaboratorElement to the collaborator
-collaboratorElement.textContent = collaborator;
+// Export fetchData function to make it accessible from other files
+export { fetchData };
