@@ -418,7 +418,7 @@ img {
 }
 
 #siteWrapper {
-  opacity: 0;
+  opacity: 1;
   -webkit-animation-fill-mode: both !important;
   animation-fill-mode: both !important;
 }
